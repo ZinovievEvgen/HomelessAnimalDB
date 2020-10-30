@@ -1,8 +1,25 @@
 version: "3.3"
 
 services:
-  # Сервисы
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    env_file: .env
+    volumes:
+        - ./nginx/:/etc/nginx/
+    ports:
+      - "80:80"
+      - "443:443"
+      # TO DO:
+      # В будущем возможно использование SSL сертификатов
 
-  # БД
+  # БД Нужно ли ?
 
-  # Бэк
+  # Сюда контейнер бэка
+
+  # Сюда контейнер питона
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    env_file: .env
