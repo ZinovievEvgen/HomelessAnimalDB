@@ -1,0 +1,1 @@
+export const PRERENDERED_KEY = '__PRELOADED_STATE__';

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "strict": true,
+    "strictNullChecks": false,
+    "noUnusedLocals": true,
+    "pretty": true,
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "importsNotUsedAsValues": "preserve",
+    "paths": {
+      "@utils/*": ["./src/utils/*"],
+      "@containers/*": ["./src/containers/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@apps/*": ["src/apps/*"],
+      "@entry/*": ["./src/entry/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@types": ["./src/types.ts"],
+      "@constants": ["./src/constants.ts"],
+      "@root/*": ["./src/*"]
+    }
+  },
+  "exclude": ["*.css.d.ts"],
+  "include": ["declare.d.ts", "src/**/*", "src/*"]
+}

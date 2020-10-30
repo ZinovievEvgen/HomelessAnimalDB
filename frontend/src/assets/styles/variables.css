@@ -1,0 +1,9 @@
+:root {
+  --font_size_tiny: 12px;
+  --font_size_regular: 14px;
+  --font_size_normal: 16px;
+  --font_size_big: 18px;
+  --font_size_ebig: 22px;
+  --font_size_eebig: 28px;
+  --font_color_primary: #333;
+}
