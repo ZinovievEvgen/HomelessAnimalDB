@@ -1,4 +1,4 @@
-package ru.jun.al.haz.homeless.animal.service.dto;
+package ru.jun.al.haz.homeless.animal.service.dto.response;
 
 import lombok.Data;
 
