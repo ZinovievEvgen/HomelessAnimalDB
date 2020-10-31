@@ -10,14 +10,19 @@ const LinkComponent: React.FunctionComponent<T.ILinkProp> = ({
   icon,
   name,
   shortLink,
+  isActive,
 }) => {
   const linkClass = classnames(S.link, {
     [S.short]: shortLink,
   });
 
+  const decoratorClass = classnames(S.decorator, {
+    [S.activeDecorator]: isActive,
+  });
+
   return (
     <div onClick={onClick} className={linkClass}>
-      <div className={S.decorator} />
+      <div className={decoratorClass} />
       <span className={S.icon}>{icon}</span>
       {!shortLink && <span className={S.text}>{name}</span>}
     </div>
@@ -30,10 +35,16 @@ export const AdminLeftMenuLink: React.FunctionComponent<T.IAdminLeftMenuLinkProp
   url,
   onClick,
   shortLink,
+  isActive,
 }) =>
   url ? (
     <Link to={url}>
-      <LinkComponent icon={icon} name={name} shortLink={shortLink} />
+      <LinkComponent
+        icon={icon}
+        name={name}
+        shortLink={shortLink}
+        isActive={isActive}
+      />
     </Link>
   ) : (
     <LinkComponent
@@ -41,5 +52,6 @@ export const AdminLeftMenuLink: React.FunctionComponent<T.IAdminLeftMenuLinkProp
       name={name}
       onClick={onClick}
       shortLink={shortLink}
+      isActive={isActive}
     />
   );

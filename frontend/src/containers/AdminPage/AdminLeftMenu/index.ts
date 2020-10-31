@@ -1,2 +1,2 @@
-import { AdminLeftMenu } from './AdminLeftMenu';
-export default AdminLeftMenu;
+import { AdminLeftMenuWithContext } from './AdminLeftMenu';
+export default AdminLeftMenuWithContext;

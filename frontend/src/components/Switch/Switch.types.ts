@@ -10,5 +10,5 @@ export interface ISwitchContext extends ISwitchProps {
 
 export interface IRoute extends RouteProps {
   path?: string;
-  Component: React.FunctionComponent;
+  Component: React.FunctionComponent<any>;
 }

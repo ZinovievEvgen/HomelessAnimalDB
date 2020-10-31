@@ -1,6 +1,6 @@
 export interface IPageHeaderProps {
   hrefs: IHref[];
-  icon?: IHeaderIcon;
+  title?: IHeaderTitle;
   className?: string;
 }
 
@@ -10,8 +10,8 @@ export interface IHref {
   onClick?: () => void;
 }
 
-export interface IHeaderIcon {
-  Component: React.ReactNode;
+export interface IHeaderTitle {
+  icon?: React.ReactNode;
   text?: string;
   url?: string;
 }

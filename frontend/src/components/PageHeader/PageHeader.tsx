@@ -7,23 +7,23 @@ import * as T from './PageHeader.types';
 
 export const PageHeader: React.FunctionComponent<T.IPageHeaderProps> = ({
   hrefs,
-  icon,
+  title,
   className,
 }) => {
   const wrapClass = classnames(S.wrap, className);
 
   return (
     <div className={wrapClass}>
-      {icon &&
-        (!!icon.url ? (
-          <Link className={S.icon} to={icon.url}>
-            {icon.Component}
-            <span className={S.iconText}>{icon.text}</span>
+      {title &&
+        (!!title.url ? (
+          <Link className={S.icon} to={title.url}>
+            {title.icon}
+            <span className={S.iconText}>{title.text}</span>
           </Link>
         ) : (
           <span className={S.icon}>
-            {icon.Component}
-            <span className={S.iconText}>{icon.text}</span>
+            {title.icon}
+            <span className={S.iconText}>{title.text}</span>
           </span>
         ))}
       <div className={S.links}>

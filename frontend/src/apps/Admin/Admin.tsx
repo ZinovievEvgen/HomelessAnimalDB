@@ -9,10 +9,15 @@ export const Admin: React.FunctionComponent = () => (
   <Switch
     routes={[
       {
-        path: '/auth',
+        path: '/auth/',
         Component: Auth,
       },
       {
+        path: '/list/',
+        Component: Home,
+      },
+      {
+        path: '/',
         Component: Home,
       },
     ]}

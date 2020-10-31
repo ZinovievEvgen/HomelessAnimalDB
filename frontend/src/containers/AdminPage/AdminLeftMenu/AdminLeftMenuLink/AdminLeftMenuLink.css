@@ -29,6 +29,7 @@
   transition-duration: var(--transition_long);
 }
 
+.activeDecorator,
 .link:hover .decorator {
   transform: translateX(0);
 }

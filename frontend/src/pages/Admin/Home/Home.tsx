@@ -4,6 +4,8 @@ import AdminPage from '@containers/AdminPage';
 
 import * as T from './Home.types';
 
-export const Home: React.FunctionComponent<T.IHomeProps> = ({}) => {
-  return <AdminPage>Yes is is!</AdminPage>;
+export const Home: React.FunctionComponent<T.IHomeProps> = ({
+  location: { pathname },
+}) => {
+  return <AdminPage pathname={pathname}>Yes is is!</AdminPage>;
 };

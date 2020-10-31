@@ -4,6 +4,7 @@ export interface IAdminLeftMenuLinkProps {
   url?: string;
   onClick?: () => void;
   shortLink?: boolean;
+  isActive?: boolean;
 }
 
 export interface ILinkProp {
@@ -11,4 +12,5 @@ export interface ILinkProp {
   name?: IAdminLeftMenuLinkProps['name'];
   icon?: IAdminLeftMenuLinkProps['icon'];
   shortLink?: IAdminLeftMenuLinkProps['shortLink'];
+  isActive?: IAdminLeftMenuLinkProps['isActive'];
 }
