@@ -30,8 +30,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-    //@Autowired
-    //private BCryptPasswordEncoder passwordEncoder;
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public UserDTO register(UserDTO userDTO) {
@@ -39,9 +39,9 @@ public class UserServiceImpl implements UserService {
         RoleDTO roleUser = roleService.findByName("USER");
         List<RoleDTO> userRoles = new ArrayList<>();
         userRoles.add(roleUser);
-        //user.setPassword(passwordEncoder.encode(user.getPassword()));
+        userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword()));
         userDTO.setRoles(userRoles);
-        User user = new User();
+        User user = userMapper.toEntity(userDTO);
         user = userRepository.save(user);
         log.info("User: {} was registered successfully", user);
         return userMapper.toDto(user);

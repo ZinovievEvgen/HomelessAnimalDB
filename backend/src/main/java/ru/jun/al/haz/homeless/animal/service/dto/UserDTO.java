@@ -9,6 +9,7 @@ import java.util.List;
 public class UserDTO implements Serializable {
     private Long id;
     private String login;
+    private String fio;
     private String password;
     private String email;
     private List<RoleDTO> roles;
