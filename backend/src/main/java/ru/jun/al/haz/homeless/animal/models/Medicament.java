@@ -15,9 +15,9 @@ import java.util.List;
 @Table(name = "medicament")
 public class Medicament {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfMedicament")
     private Long idOfMedicament;
 

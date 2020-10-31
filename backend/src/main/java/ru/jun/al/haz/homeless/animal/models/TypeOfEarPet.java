@@ -16,7 +16,8 @@ import java.util.List;
 public class TypeOfEarPet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfTypeEarPet")
     private long idOfTypeEarPet;
 

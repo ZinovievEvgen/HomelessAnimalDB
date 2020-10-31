@@ -16,13 +16,14 @@ import java.util.Date;
 public class ActOfLeave {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idOfActOfLeave")
-    private Long idOfActOfLeave;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
+    @Column(name = "idOfActOfLeaveOfPet")
+    private Long idOfActOfLeaveOfPet;
 
     //номер акта
-    @Column(name = "numberActOfLeave")
-    private String numberActOfLeave;
+    @Column(name = "numberActOfLeaveOfPet")
+    private String numberActOfLeaveOfPet;
 
     //дата
     @Column(name = "dateOfActOfLeave")
@@ -35,7 +36,7 @@ public class ActOfLeave {
     private ReasonToLeave reasonToLeave;
 
     //карточка учета
-    @OneToOne(mappedBy = "actOfLeave")
+    @OneToOne(mappedBy = "actOfLeaveOfPetId")
     private AccountCardOfPet accountCardOfPet;
 
     public ActOfLeave() {

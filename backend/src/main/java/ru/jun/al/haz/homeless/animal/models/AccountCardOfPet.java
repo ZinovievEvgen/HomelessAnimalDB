@@ -48,12 +48,15 @@ public class AccountCardOfPet {
     private List<VaccinationOfPet> vaccinationOfPets = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idOfActOfVetInspection")
+    @JoinColumn(name = "actOfVetInspectionOfPetId")
     private ActOfVetInspection actOfVetInspectionOfPetId;
 
     //номер
     @Column(name = "numberAccountCardOfPet")
     private String numberAccountCardOfPet;
+
+    @Column(name = "cardNumber")
+    private String cardNumber;
 
     //возраст
     @Column(name = "ageOfPet")
