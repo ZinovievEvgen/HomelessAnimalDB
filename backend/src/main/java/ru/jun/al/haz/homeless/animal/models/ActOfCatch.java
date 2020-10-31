@@ -32,7 +32,7 @@ public class ActOfCatch {
     private String numberActOfCatchPet;
 
     //карточка учета
-    @OneToOne(mappedBy = "actOfCatchForPet")
+    @OneToOne(mappedBy = "actOfLeaveOfPetId")
     private AccountCardOfPet accountCardOfPet;
 
     public ActOfCatch() {

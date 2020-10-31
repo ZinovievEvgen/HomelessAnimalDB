@@ -34,8 +34,8 @@ public class AccountCardOfPet {
     private ActOfTransfer actOfTransferOfPetId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idOfActOfLeave")
-    private ActOfLeave actOfLeave;
+    @JoinColumn(name = "idActOfLeaveOfPetId")
+    private ActOfLeave actOfLeaveOfPetId;
 
     @OneToMany(mappedBy = "accountCardOfPet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
