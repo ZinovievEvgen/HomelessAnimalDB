@@ -16,8 +16,8 @@ import java.util.List;
 public class TypeOfSex {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idOfTypeSexOnPet")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     private long idOfTypeSexOnPet;
 
     @Column(name = "nameOfTypeSexOnPet")

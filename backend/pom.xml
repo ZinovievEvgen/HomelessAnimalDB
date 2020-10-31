@@ -21,6 +21,7 @@
 		<maven-compiler-plugin.version>3.5</maven-compiler-plugin.version>
 		<hibernate.version>5.4.15.Final</hibernate.version>
 		<jaxb-runtime.version>2.3.3</jaxb-runtime.version>
+		<swagger.version>3.0.0</swagger.version>
 	</properties>
 
 	<dependencies>
@@ -89,7 +90,7 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger2</artifactId>
-			<version>2.7.0</version>
+			<version>${swagger.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.swagger</groupId>
@@ -100,8 +101,13 @@
 		<dependency>
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
-			<version>2.7.0</version>
+			<version>${swagger.version}</version>
 			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-bean-validators</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 	</dependencies>
 

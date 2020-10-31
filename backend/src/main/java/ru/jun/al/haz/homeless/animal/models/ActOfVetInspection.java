@@ -15,7 +15,8 @@ import java.util.Date;
 public class ActOfVetInspection {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfActOfVetInspection")
     private Long idOfActOfVetInspection;
 

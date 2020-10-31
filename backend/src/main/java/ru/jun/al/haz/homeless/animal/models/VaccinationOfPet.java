@@ -17,7 +17,8 @@ import java.util.List;
 public class VaccinationOfPet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfVaccinationOfPet")
     private Long idOfVaccinationOfPet;
 
@@ -37,9 +38,9 @@ public class VaccinationOfPet {
 
     //карточка учета
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = AccountCardOfPet.class)
-    @JoinTable(name = "vaccination-pet-list",
-            joinColumns = {@JoinColumn(name = "idOfVaccinationOfPet")},
-            inverseJoinColumns = {@JoinColumn(name = "idOfAccountCardOfPet")})
+    @JoinTable(name = "vaccination_of_pets",
+            joinColumns = {@JoinColumn(name = "vaccination_id")},
+            inverseJoinColumns = {@JoinColumn(name = "accountCard_id")})
     @JsonBackReference
     private List<AccountCardOfPet> accountCardOfPetList;
 

@@ -14,7 +14,8 @@ import javax.persistence.*;
 public class ActOfCatch {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfActOfCatch")
     private Long idOfActOfCatch;
 
@@ -31,7 +32,7 @@ public class ActOfCatch {
     private String numberActOfCatchPet;
 
     //карточка учета
-    @OneToOne(mappedBy = "actOfCatchForPet")
+    @OneToOne(mappedBy = "actOfLeaveOfPetId")
     private AccountCardOfPet accountCardOfPet;
 
     public ActOfCatch() {

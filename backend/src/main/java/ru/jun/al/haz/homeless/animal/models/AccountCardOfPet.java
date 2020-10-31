@@ -34,8 +34,8 @@ public class AccountCardOfPet {
     private ActOfTransfer actOfTransferOfPetId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idOfActOfLeave")
-    private ActOfLeave actOfLeave;
+    @JoinColumn(name = "idActOfLeaveOfPetId")
+    private ActOfLeave actOfLeaveOfPetId;
 
     @OneToMany(mappedBy = "accountCardOfPet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
@@ -48,12 +48,15 @@ public class AccountCardOfPet {
     private List<VaccinationOfPet> vaccinationOfPets = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idOfActOfVetInspection")
+    @JoinColumn(name = "actOfVetInspectionOfPetId")
     private ActOfVetInspection actOfVetInspectionOfPetId;
 
     //номер
     @Column(name = "numberAccountCardOfPet")
     private String numberAccountCardOfPet;
+
+    @Column(name = "cardNumber")
+    private String cardNumber;
 
     //возраст
     @Column(name = "ageOfPet")

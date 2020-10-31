@@ -1,6 +1,5 @@
 package ru.jun.al.haz.homeless.animal.service;
 
-import ru.jun.al.haz.homeless.animal.models.User;
 import ru.jun.al.haz.homeless.animal.service.dto.UserDTO;
 
 import java.util.List;

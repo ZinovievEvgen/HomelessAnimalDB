@@ -38,7 +38,8 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/v2/api-docs",
                 "/swagger-ui.html",
                 "/swagger-ui/**",
-                "http://localhost:8082/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/");
+                "http://localhost:8082/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config#/",
+                "/v3/api-docs/**");
     }
 
     @Override
@@ -50,6 +51,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(LOGIN_ENDPOINT).permitAll()
+                .antMatchers("/v3/api-docs/**").permitAll()
                 .antMatchers(HttpMethod.POST, ADMIN_ENDPOINTS).hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()
