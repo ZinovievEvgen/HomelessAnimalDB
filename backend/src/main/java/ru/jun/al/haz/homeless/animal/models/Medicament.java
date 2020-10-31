@@ -30,7 +30,7 @@ public class Medicament {
 
     @OneToMany(mappedBy = "medicament", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
-    private List<VaccinationOfPet> VaccinationOfPet;
+    private List<VaccinationOfPet> vaccinationOfPet;
 
     @OneToMany(mappedBy = "medicament", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
