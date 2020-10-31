@@ -1,6 +1,6 @@
 --liquibase formatted sql
 
---changeset kmatveev:rolesimport
+--changeset kmatveev:prefectimport
 --preconditions onFail:CONTINUE onError:CONTINUE
 insert into animals.prefect (idOfPrefect, nameOfPrefectn) values
 (1, 'Префектура СВАО'),

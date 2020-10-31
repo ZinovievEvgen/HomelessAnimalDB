@@ -1,6 +1,5 @@
 package ru.jun.al.haz.homeless.animal.service.impl;
 
-import liquibase.pro.packaged.A;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

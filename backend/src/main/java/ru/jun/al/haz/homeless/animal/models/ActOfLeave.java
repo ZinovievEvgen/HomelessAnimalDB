@@ -16,7 +16,8 @@ import java.util.Date;
 public class ActOfLeave {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfActOfTransferOfPet")
     private Long idOfActOfTransferOfPet;
 

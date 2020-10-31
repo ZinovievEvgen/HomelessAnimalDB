@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * Слой сущностей БД (Model)
- * класс - окрас животного: содержит информацию об окрасах животных
+ * класс - причина движения: содержит информацию о причине движения
  */
 @Data
 @Entity
@@ -16,7 +16,8 @@ import java.util.List;
 public class ReasonToLeave {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfReasonToLeave")
     private long idOfReasonToLeave;
 

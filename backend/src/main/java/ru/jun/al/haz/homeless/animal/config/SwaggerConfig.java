@@ -1,19 +1,24 @@
 package ru.jun.al.haz.homeless.animal.config;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.RequestHandlerSelectors;
-import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.*;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+
 import static springfox.documentation.builders.PathSelectors.regex;
+
 
 @Configuration
 @EnableSwagger2
+@Slf4j
 public class SwaggerConfig
 {
+
     @Bean
     public Docket api()
     {

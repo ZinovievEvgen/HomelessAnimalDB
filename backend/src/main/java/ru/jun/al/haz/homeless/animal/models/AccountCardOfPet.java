@@ -17,7 +17,8 @@ import java.util.*;
 public class AccountCardOfPet {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfAccountCardOfPet")
     private Long idOfAccountCardOfPet;
 
@@ -32,6 +33,10 @@ public class AccountCardOfPet {
     @JoinColumn(name = "actOfTransferOfPetId")
     private ActOfTransfer actOfTransferOfPetId;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "actOfLeaveOfPetId")
+    private ActOfLeave actOfLeaveOfPetId;
+
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "vaccinationOfPets",
             joinColumns = @JoinColumn(name = "accountCard_id"),
@@ -45,6 +50,9 @@ public class AccountCardOfPet {
     //номер
     @Column(name = "numberAccountCardOfPet")
     private String numberAccountCardOfPet;
+
+    @Column(name = "cardNumber")
+    private String cardNumber;
 
     //возраст
     @Column(name = "ageOfPet")

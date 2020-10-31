@@ -14,7 +14,8 @@ import javax.persistence.*;
 public class ReasonOfEuthanize {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
+    @SequenceGenerator(name = "sequenceGenerator")
     @Column(name = "idOfReasonEuthanize")
     private long idOfReasonEuthanize;
 
