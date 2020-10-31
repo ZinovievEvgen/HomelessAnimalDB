@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import ru.jun.al.haz.homeless.animal.security.jwt.JwtTokenProvider;
 import ru.jun.al.haz.homeless.animal.service.UserService;
-import ru.jun.al.haz.homeless.animal.service.dto.AuthenticationRequestDTO;
-import ru.jun.al.haz.homeless.animal.service.dto.AuthenticationResponseDTO;
+import ru.jun.al.haz.homeless.animal.service.dto.request.AuthenticationRequestDTO;
+import ru.jun.al.haz.homeless.animal.service.dto.response.AuthenticationResponseDTO;
 import ru.jun.al.haz.homeless.animal.service.dto.UserDTO;
 
 

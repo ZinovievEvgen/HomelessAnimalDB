@@ -58,7 +58,7 @@ public class Pet {
     @Column(name = "controlPointOfPet")
     private String controlPointOfPet;
 
-    //софиализировано или нет
+    //социализировано или нет
     @Column(name = "socialStatusOfPet")
     private String socialStatusOfPet;
 
