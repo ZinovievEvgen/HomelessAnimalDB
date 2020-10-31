@@ -1,6 +1,4 @@
 from sklearn.preprocessing import LabelEncoder
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import classification_report
 import pandas as pd
 import numpy as np
 
@@ -24,10 +22,13 @@ for x in df.columns:
 
 for x in df.columns:
      df[x]=mapper[x].fit_transform(df.__getattr__(x))
+     mapping = dict(zip(mapper[x].classes_, range(0, len(mapper[x].classes_))))
+     print(mapping)
      m[x] = len(df[x].unique())
 
 print(m)
 print(df)
+
 
 
 

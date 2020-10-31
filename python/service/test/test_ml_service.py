@@ -9,8 +9,8 @@ import yaml
 class WebServiceTestOperations(unittest.TestCase):
 
     async def get_class(self, global_config):
-        questionary_data = {'feature1': 'feature', 'feature2': 1}
-        data = {"questionary_data": questionary_data}
+        data = [{'idOfPet':"1001", 'nameOfTypePet': 'собака','sizeOfPet': 'средний','nameOfColorPet':'черный','nameOfTypeWoolPet':'короткая','nameOfTypeEarPet':'висячие','nameOfTypeOfTailPet':'обычный'},
+                                     {'idOfPet':"1002",'nameOfTypePet': 'кошка','sizeOfPet': 'средний','nameOfColorPet':'черный','nameOfTypeWoolPet':'короткая','nameOfTypeEarPet':'полустоячие','nameOfTypeOfTailPet':'обычный'}]
         data = dumps(data)
         try:
             host = global_config["host"]
