@@ -57,11 +57,6 @@ df = pd.read_csv('dataset.csv', index_col='Unnamed: 0')
 '''df.sort_values(by='Unnamed: 0.1', inplace=True)
 df.drop(columns='Unnamed: 0.1', inplace=True)
 df.to_csv('dataset.csv')'''
-print(df)
-y = df['целевая метка']
-print(y.value_counts())
-X_train, X_test, y_train, y_test = train_test_split(df.drop(columns=['целевая метка']), y, stratify=y, test_size=0.2, random_state=123)
-print(X_train)
 
 
 

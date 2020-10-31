@@ -1,4 +1,6 @@
 from sklearn.preprocessing import LabelEncoder
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
 import pandas as pd
 import numpy as np
 
@@ -26,11 +28,6 @@ for x in df.columns:
 
 print(m)
 print(df)
-
-dogs = df[df['вид '] == 1]
-cats = df[df['вид '] == 2]
-
-from sklearn.metrics import silhouette_score
 
 
 

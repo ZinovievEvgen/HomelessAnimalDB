@@ -1,10 +1,12 @@
 #!/usr/bin/env python
-
+from sklearn.neighbors.classification import KNeighborsClassifier
 from sanic import Sanic
 from sanic import response
 import pandas as pd
 from pandas.io.json import json_normalize
+from sklearn.preprocessing import scale
 import logging
+import pickle
 import json
 import yaml
 from python.service.img_detector.img_detection import *
@@ -17,7 +19,9 @@ app = Sanic("ml_service")
 async def get_questionary_class(request):
     df = json_normalize(request.json, 'questionary_data')
     response_dict = dict()
-    response_dict["class"] = 1
+    cl = knn_model.predict([ 1,3,26,2,2,2])
+    print(cl)
+    response_dict["class"] = cl
     return response.text(json.dumps(response_dict, ensure_ascii=False))
 
 
@@ -82,4 +86,5 @@ if __name__ == "__main__":
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
     model.load_state_dict(torch.load(path, map_location=device))
+    knn_model = pickle.load(open('KNNGraph.sav', 'rb'))
     app.run(host="0.0.0.0", port=9001, debug=True, access_log=True)
