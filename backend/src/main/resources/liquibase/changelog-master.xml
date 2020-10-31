@@ -17,5 +17,7 @@
     <include file="classpath:liquibase/3_add_entity_constraint_to_User_and_Role.xml" relativeToChangelogFile="false"/>
     <include file="classpath:liquibase/4_initial_data_for_User_and_Role.sql" relativeToChangelogFile="false"/>
     <include file="classpath:liquibase/5_add_sequence_generator.xml" relativeToChangelogFile="false"/>
+    <!--<include file="classpath:liquibase/6_initial_data_for_ExpOrganization.sql" relativeToChangelogFile="false"/>
+    <include file="classpath:liquibase/7_initial_data_for_prefect.sql" relativeToChangelogFile="false"/> -->
 
 </databaseChangeLog>

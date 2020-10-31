@@ -18,12 +18,12 @@ public class ActOfLeave {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
     @SequenceGenerator(name = "sequenceGenerator")
-    @Column(name = "idOfActOfTransferOfPet")
-    private Long idOfActOfTransferOfPet;
+    @Column(name = "idOfActOfLeaveOfPet")
+    private Long idOfActOfLeaveOfPet;
 
     //номер акта
-    @Column(name = "numberActOfTransferOfPet")
-    private String numberActOfTransferOfPet;
+    @Column(name = "numberActOfLeaveOfPet")
+    private String numberActOfLeaveOfPet;
 
     //дата
     @Column(name = "dateOfActOfLeave")

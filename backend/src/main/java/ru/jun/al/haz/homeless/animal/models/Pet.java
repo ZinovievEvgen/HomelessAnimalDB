@@ -26,22 +26,22 @@ public class Pet {
 
     //порода
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "breedOfPetId")
+    @JoinColumn(name = "idOfBreedPets")
     @JsonBackReference
     private BreedOfPet breedOfPet;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "shelterOfPetId")
+    @JoinColumn(name = "idOfShelterOfPet")
     @JsonBackReference
     private ShelterOfPet shelterOfPetId;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "accountCardOfPetId")
+    @JoinColumn(name = "idOfAccountCardOfPet")
     private AccountCardOfPet accountCardOfPet;
 
     //тип животного
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfPetId")
+    @JoinColumn(name = "idOfTypePets")
     @JsonBackReference
     private TypeOfPet typeOfPet;
 
@@ -50,7 +50,7 @@ public class Pet {
 
     //пол
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfSexId")
+    @JoinColumn(name = "idOfTypeSexOnPet")
     @JsonBackReference
     private TypeOfSex typeOfSex;
 

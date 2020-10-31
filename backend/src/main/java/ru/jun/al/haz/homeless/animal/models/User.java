@@ -6,6 +6,10 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.util.List;
 
+/**
+ * Слой сущностей БД (Model)
+ * класс-сотрудник: содержит информацию о сотрудниках
+ * */
 @Data
 @Entity
 @Table(name = "users")
@@ -29,6 +33,8 @@ public class User {
 
     @Column(name = "user_fio")
     private String fio;
+
+    //если департамент - если префектура - если экспл организация - если приют (в контроллере при добавлени)
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles",
