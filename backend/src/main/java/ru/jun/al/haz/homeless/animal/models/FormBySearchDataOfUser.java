@@ -10,6 +10,9 @@ import lombok.Data;
 @Data
 public class FormBySearchDataOfUser {
 
+    //тип животного
+    private String nameOfTypePets;
+
     //размер
     private String sizeOfPet;
 
