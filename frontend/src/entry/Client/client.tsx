@@ -6,10 +6,14 @@ import Client from '@root/apps/Client';
 
 import { ROOT_ELEMENT_NAME } from '@constants';
 
-const App: React.FunctionComponent = () => (
-  <ClientContainer>
-    <Client />
-  </ClientContainer>
-);
+import ready from '@utils/DOMReady';
 
-ReactDOM.hydrate(<App />, document.getElementById(ROOT_ELEMENT_NAME));
+ready.then(() => {
+  const App: React.FunctionComponent = () => (
+    <ClientContainer>
+      <Client />
+    </ClientContainer>
+  );
+
+  ReactDOM.hydrate(<App />, document.getElementById(ROOT_ELEMENT_NAME));
+});

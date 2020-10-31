@@ -1,0 +1,21 @@
+.wrap {
+  width: 300px;
+  height: 100%;
+  background-color: var(--color_dark);
+  transition-duration: var(--transition_normal);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: var(--padding_normal);
+  padding-bottom: var(--padding_normal);
+}
+
+.closed {
+  width: 80px;
+}
+
+.top,
+.bottom {
+  flex: 0 1 auto;
+}

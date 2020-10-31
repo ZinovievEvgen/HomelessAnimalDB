@@ -1,0 +1,42 @@
+.link {
+  width: 100%;
+  padding: var(--padding_normal);
+  padding-left: var(--padding_big);
+  position: relative;
+  font-size: var(--font_size_normal);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color_white);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.short {
+  justify-content: center;
+  padding-left: var(--padding_normal);
+}
+
+.decorator {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--color_primary);
+  width: 5px;
+  transform: translate(-100%);
+  transition-duration: var(--transition_long);
+}
+
+.link:hover .decorator {
+  transform: translateX(0);
+}
+
+.icon + .text {
+  margin-left: var(--padding_normal);
+}
+
+.icon path {
+  stroke: var(--color_white);
+}

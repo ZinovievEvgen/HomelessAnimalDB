@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   root: path.resolve(__dirname, './src'),
   dist: path.join(__dirname, './dist'),
-  include: /node_modules\/((@material-ui\/core)\/).*/,
+  include: /node_modules\/((grommet|grommet-icons)\/).*/,
 
   entry: path.resolve(__dirname, './src/entry'),
 

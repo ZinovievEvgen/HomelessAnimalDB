@@ -2,24 +2,24 @@ version: "3.3"
 
 services:
   nginx:
-    image: nginx:alpine
+    image: danday74/nginx-lua
     restart: unless-stopped
     env_file: .env
     volumes:
-        - ./nginx/:/etc/nginx/
+        - ./nginx:/nginx/conf
     ports:
       - "80:80"
       - "443:443"
-      # TO DO:
-      # В будущем возможно использование SSL сертификатов
 
-  # БД Нужно ли ?
+  # БД
 
-  # Сюда контейнер бэка
-
-  # Сюда контейнер питона
+  # Бэк
 
   frontend:
     build: ./frontend
     restart: unless-stopped
     env_file: .env
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+      - /frontend/dist

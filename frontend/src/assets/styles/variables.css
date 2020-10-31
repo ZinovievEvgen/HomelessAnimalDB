@@ -1,9 +1,31 @@
 :root {
+  /* Шрифты */
   --font_size_tiny: 12px;
   --font_size_regular: 14px;
   --font_size_normal: 16px;
   --font_size_big: 18px;
   --font_size_ebig: 22px;
   --font_size_eebig: 28px;
+
+  /* Цвета */
   --font_color_primary: #333;
+  --font_color_contrast_to_primary: #fff;
+  --color_primary: #c22;
+  --color_dark: #2d3945;
+  --color_white: #fff;
+
+  /* Временные интервалы */
+  --transition_short: 0.1s;
+  --transition_normal: 0.2s;
+  --transition_long: 0.3s;
+
+  /* Шрифты */
+  --base-fonts: -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI',
+    'Segoe WP', 'Helvetica Neue', 'Lucida Grande', Verdana, Tahoma, Arial,
+    sans-serif;
+
+  /* Отступы */
+  --padding_min: 8px;
+  --padding_normal: 12px;
+  --padding_big: 16px;
 }

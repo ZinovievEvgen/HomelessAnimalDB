@@ -5,3 +5,5 @@ declare module '*.png';
 declare const DEBUG: boolean;
 
 declare module '*.tpl';
+
+declare module 'merge';

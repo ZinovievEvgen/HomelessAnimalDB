@@ -99,7 +99,7 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.svg/,
-          loader: 'svg-loader',
+          loader: '@svgr/webpack',
         },
         {
           test: [/\.jpe?g$/, /\.png$/],

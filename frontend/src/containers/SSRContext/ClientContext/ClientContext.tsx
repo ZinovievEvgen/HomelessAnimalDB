@@ -6,6 +6,7 @@ export const ClientContext = React.createContext<T.IClientContext>(
   {} as T.IClientContext
 );
 
+// TO DO: добавить передачу только запрашиваемых свайств
 export const withClientContext = <I extends {}>(
   Component: React.FunctionComponent<I & T.IClientContext>
 ): React.FunctionComponent<I> => (props: any) => (

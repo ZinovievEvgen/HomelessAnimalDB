@@ -1,0 +1,45 @@
+.wrap {
+  height: 50px;
+  display: flex;
+  background-color: var(--color_primary);
+  color: var(--font_color_contrast_to_primary);
+  font-size: var(--font_size_normal);
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--padding_normal);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon path {
+  stroke: var(--color_white);
+}
+
+.iconText {
+  display: inline;
+  line-height: 100%;
+  margin-left: 8px;
+}
+
+.links {
+  display: flex;
+}
+
+.link {
+  display: inline;
+  line-height: 100%;
+  margin-right: var(--padding_big);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:last-child {
+  margin-right: 0;
+}
