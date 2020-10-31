@@ -17,12 +17,12 @@ public class ActOfLeave {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "idOfActOfTransferOfPet")
-    private Long idOfActOfTransferOfPet;
+    @Column(name = "idOfActOfLeave")
+    private Long idOfActOfLeave;
 
     //номер акта
-    @Column(name = "numberActOfTransferOfPet")
-    private String numberActOfTransferOfPet;
+    @Column(name = "numberActOfLeave")
+    private String numberActOfLeave;
 
     //дата
     @Column(name = "dateOfActOfLeave")
@@ -35,7 +35,7 @@ public class ActOfLeave {
     private ReasonToLeave reasonToLeave;
 
     //карточка учета
-    @OneToOne(mappedBy = "actOfLeaveOfPetId")
+    @OneToOne(mappedBy = "actOfLeave")
     private AccountCardOfPet accountCardOfPet;
 
     public ActOfLeave() {

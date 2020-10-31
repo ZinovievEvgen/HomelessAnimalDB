@@ -2,7 +2,7 @@
 
 --changeset kmatveev:rolesimport
 --preconditions onFail:CONTINUE onError:CONTINUE
-insert into animals.prefect (idOfPrefect, nameOfPrefectn) values
+insert into animals.prefect (idOfPrefect, nameOfPrefect) values
 (1, 'Префектура СВАО'),
 (2, 'Префектура ВАО'),
 (3, 'Префектура ЮАО'),
@@ -11,3 +11,5 @@ insert into animals.prefect (idOfPrefect, nameOfPrefectn) values
 (6, 'Префектура ЗАО'),
 (7, 'Префектура ЮВАО'),
 (8, 'Префектура ЮЗАО')
+on conflict (idOfPrefect) do update
+set nameOfPrefect = excluded.nameOfPrefect;

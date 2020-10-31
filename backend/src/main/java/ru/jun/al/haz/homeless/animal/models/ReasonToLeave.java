@@ -25,6 +25,10 @@ public class ReasonToLeave {
 
     @OneToMany(mappedBy = "reasonToLeave", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
+    private List<AccountCardOfPet> accountCardOfPets;
+
+    @OneToMany(mappedBy = "reasonToLeave", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private List<ActOfLeave> actOfLeave;
 
     public ReasonToLeave() {

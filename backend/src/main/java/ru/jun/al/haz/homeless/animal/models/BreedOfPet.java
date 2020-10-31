@@ -29,7 +29,7 @@ public class BreedOfPet {
     private List<Pet> pets;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfPetId")
+    @JoinColumn(name = "idOfTypePets")
     @JsonBackReference
     private TypeOfPet typeOfPet;
 

@@ -11,3 +11,5 @@ insert into animals.expOrganization (idOfExploitingOrganization, nameOfExploitin
 (6, 'ГБУ «Автомобильные дороги ЮВАО»'),
 (7, 'ГБУ «Автомобильные дороги ЗАО»'),
 (8, 'ГБУ «Доринвест»')
+on conflict (idOfExploitingOrganization) do update
+set nameOfExploitingOrganization = excluded.nameOfExploitingOrganization;

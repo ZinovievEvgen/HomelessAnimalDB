@@ -37,9 +37,9 @@ public class VaccinationOfPet {
 
     //карточка учета
     @ManyToMany(fetch = FetchType.LAZY, targetEntity = AccountCardOfPet.class)
-    @JoinTable(name = "vaccinationOfPets",
-            joinColumns = {@JoinColumn(name = "vaccination_id")},
-            inverseJoinColumns = {@JoinColumn(name = "accountCard_id")})
+    @JoinTable(name = "vaccination-pet-list",
+            joinColumns = {@JoinColumn(name = "idOfVaccinationOfPet")},
+            inverseJoinColumns = {@JoinColumn(name = "idOfAccountCardOfPet")})
     @JsonBackReference
     private List<AccountCardOfPet> accountCardOfPetList;
 

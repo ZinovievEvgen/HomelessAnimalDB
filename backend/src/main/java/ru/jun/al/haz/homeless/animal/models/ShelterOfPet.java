@@ -52,9 +52,9 @@ public class ShelterOfPet {
 
     //орг-штатная структура - у кого в подчинении
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "exploitingOrganizationId")
+    @JoinColumn(name = "idOfExploitingOrganization")
     @JsonBackReference
-    private String exploitingOrganization;
+    private ExploitingOrganization exploitingOrganization;
 
     public ShelterOfPet() {
     }

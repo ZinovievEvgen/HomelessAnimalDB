@@ -1,6 +1,7 @@
 package ru.jun.al.haz.homeless.animal.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -25,21 +26,29 @@ public class AccountCardOfPet {
     private Pet pet;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "actOfCatchForPetId")
+    @JoinColumn(name = "idOfActOfCatch")
     private ActOfCatch actOfCatchForPet;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "actOfTransferOfPetId")
+    @JoinColumn(name = "idOfActOfTransferOfPet")
     private ActOfTransfer actOfTransferOfPetId;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "idOfActOfLeave")
+    private ActOfLeave actOfLeave;
+
+    @OneToMany(mappedBy = "accountCardOfPet", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
+    private List<TreatmentFromParasite> treatmentFromParasites;
+
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "vaccinationOfPets",
-            joinColumns = @JoinColumn(name = "accountCard_id"),
-            inverseJoinColumns = @JoinColumn(name = "vaccination_id"))
+    @JoinTable(name = "vaccination-pet-list",
+            joinColumns = @JoinColumn(name = "idOfAccountCardOfPet"),
+            inverseJoinColumns = @JoinColumn(name = "idOfVaccinationOfPet"))
     private List<VaccinationOfPet> vaccinationOfPets = new ArrayList<>();
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "actOfVetInspectionOfPetId")
+    @JoinColumn(name = "idOfActOfVetInspection")
     private ActOfVetInspection actOfVetInspectionOfPetId;
 
     //номер
@@ -56,25 +65,35 @@ public class AccountCardOfPet {
 
     //окрас
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "colorOfPetId")
+    @JoinColumn(name = "idOfColorPets")
     @JsonBackReference
     private ColorOfPet colorOfPet;
 
     //уши
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfEarPetId")
+    @JoinColumn(name = "idOfTypeEarPet")
     @JsonBackReference
     private TypeOfEarPet typeOfEarPet;
 
     //шерсть
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfWoolPetId")
+    @JoinColumn(name = "idOfTypeWoolPet")
     @JsonBackReference
     private TypeOfWoolPet typeOfWoolPet;
 
-    //хвост
+    //причины выбытия из приюта
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "typeOfTailPetId")
+    @JoinColumn(name = "idOfReasonToLeave")
+    @JsonBackReference
+    private ReasonToLeave reasonToLeave;
+
+    //дата выбытия
+    @Column(name = "dateOfLeave")
+    private Date dateOfLeave;
+
+    //причина выбытия
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "idOfTypeOfTailPet")
     @JsonBackReference
     private TypeOfTailPet typeOfTailPet;
 
