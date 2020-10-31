@@ -1,0 +1,15 @@
+# environment
+.env
+
+#misc
+.idea
+
+#back
+target
+TrainingProjectAndTaskHack.iml
+
+#frontend
+frontend/node_modules/
+frontend/.cache/
+frontend/dist/
+frontend/**/*.css.d.ts
