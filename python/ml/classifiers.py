@@ -39,8 +39,7 @@ names = ["Nearest Neighbors",
          "Random Forest", 
          "Neural Net", 
          "AdaBoost",
-         "Naive Bayes", 
-        #"QDA"
+         "Naive Bayes"
         ]
 
 classifiers = [
@@ -48,8 +47,7 @@ classifiers = [
     DecisionTreeClassifier(max_depth=20),
     RandomForestClassifier(max_depth=20, n_estimators=15, criterion='entropy'),
     MLPClassifier(alpha=0.00001, max_iter=1000, hidden_layer_sizes=750, solver='adam'),
-    AdaBoostClassifier(DecisionTreeClassifier(max_depth=20), n_estimators=15),
-    #QuadraticDiscriminantAnalysis()
+    AdaBoostClassifier(DecisionTreeClassifier(max_depth=20), n_estimators=15)
 ]
 
 
