@@ -1,7 +1,6 @@
 # HomelessAnimalDB
 Homeless Animal DB by Jun-AL-HazzarD
 
-# Готовимся к победе!
 
 # Соглашения
 
