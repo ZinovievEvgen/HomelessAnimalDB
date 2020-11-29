@@ -7,6 +7,7 @@
 #back
 target
 TrainingProjectAndTaskHack.iml
+backend/backend.iml
 
 #frontend
 frontend/node_modules/
