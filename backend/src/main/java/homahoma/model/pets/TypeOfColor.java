@@ -56,7 +56,7 @@ public class TypeOfColor {
 
     @Override
     public String toString() {
-        return "TypeOfColor{" +
+        return "TypeOfColorService{" +
                 "name='" + name + '\'' +
                 '}';
     }
