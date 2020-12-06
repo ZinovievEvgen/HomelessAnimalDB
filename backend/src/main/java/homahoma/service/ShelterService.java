@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ShelterService {
 
-    Shelter getShelterById(Long id);
+    Shelter getShelterById(Long id) throws Exception;
 
     void addShelter(Shelter shelter);
 
@@ -15,5 +15,5 @@ public interface ShelterService {
 
     void deleteShelterById(Long id);
 
-    void updateShelter(Shelter shelter);
+    void updateShelter(Shelter shelter) throws Exception;
 }

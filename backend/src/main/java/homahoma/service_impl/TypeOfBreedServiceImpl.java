@@ -19,27 +19,38 @@ public class TypeOfBreedServiceImpl implements TypeOfBreedService {
     }
 
     @Override
-    public TypeOfBreed getTypeOfBreedById(Long id) {
-        return null;
+    public TypeOfBreed getTypeOfBreedById(Long id) throws Exception {
+        return typeOfBreedRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addTypeOfBreed(TypeOfBreed typeOfBreed) {
-
+        //заменить логгером
+        typeOfBreedRepository.save(typeOfBreed);
     }
 
     @Override
     public List<TypeOfBreed> getAllTypeOfBreed() {
-        return null;
+        return typeOfBreedRepository.findAll();
     }
 
     @Override
     public void deleteTypeOfBreedById(Long id) {
-
+        try {
+            typeOfBreedRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateTypeOfBreed(TypeOfBreed typeOfBreed) {
-
+    public void updateTypeOfBreed(TypeOfBreed newTypeOfBreed) throws Exception {
+        typeOfBreedRepository.findById(newTypeOfBreed.getId()).map(typeOfBreed -> {
+            typeOfBreed.setName(newTypeOfBreed.getName());
+            typeOfBreed.setPets(newTypeOfBreed.getPets());
+            typeOfBreed.setTypeOfPet(newTypeOfBreed.getTypeOfPet());
+            return typeOfBreedRepository.save(newTypeOfBreed);
+        }).orElseThrow(Exception::new);
     }
 }

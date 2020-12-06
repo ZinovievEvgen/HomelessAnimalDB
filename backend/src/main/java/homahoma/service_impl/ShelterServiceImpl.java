@@ -19,27 +19,42 @@ public class ShelterServiceImpl implements ShelterService {
     }
 
     @Override
-    public Shelter getShelterById(Long id) {
-        return null;
+    public Shelter getShelterById(Long id) throws Exception {
+        return shelterRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addShelter(Shelter shelter) {
-
+        //заменить логгером
+        shelterRepository.save(shelter);
     }
 
     @Override
     public List<Shelter> getAllShelter() {
-        return null;
+        return shelterRepository.findAll();
     }
 
     @Override
     public void deleteShelterById(Long id) {
-
+        try {
+            shelterRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateShelter(Shelter shelter) {
-
+    public void updateShelter(Shelter newShelter) throws Exception {
+        shelterRepository.findById(newShelter.getId()).map(shelter -> {
+            shelter.setName(newShelter.getName());
+            shelter.setAddress(newShelter.getAddress());
+            shelter.setChiefFullName(newShelter.getChiefFullName());
+            shelter.setEmail(newShelter.getEmail());
+            shelter.setPhone(newShelter.getPhone());
+            shelter.setWebsite(newShelter.getWebsite());
+            shelter.setPets(newShelter.getPets());
+            return shelterRepository.save(newShelter);
+        }).orElseThrow(Exception::new);
     }
 }

@@ -19,27 +19,38 @@ public class TypeOfTailServiceImpl implements TypeOfTailService {
     }
 
     @Override
-    public TypeOfTail getTypeOfTailById(Long id) {
-        return null;
+    public TypeOfTail getTypeOfTailById(Long id) throws Exception {
+        return typeOfTailRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addTypeOfTail(TypeOfTail typeOfTail) {
+        //заменить логгером
+        typeOfTailRepository.save(typeOfTail);
 
     }
 
     @Override
     public List<TypeOfTail> getAllTypeOfTail() {
-        return null;
+        return typeOfTailRepository.findAll();
     }
 
     @Override
     public void deleteTypeOfTailById(Long id) {
-
+        try {
+            typeOfTailRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateTypeOfTail(TypeOfTail typeOfTail) {
-
+    public void updateTypeOfTail(TypeOfTail newTypeOfTail) throws Exception {
+        typeOfTailRepository.findById(newTypeOfTail.getId()).map(typeOfTail -> {
+            typeOfTail.setName(newTypeOfTail.getName());
+            typeOfTail.setPets(newTypeOfTail.getPets());
+            return typeOfTailRepository.save(newTypeOfTail);
+        }).orElseThrow(Exception::new);
     }
 }

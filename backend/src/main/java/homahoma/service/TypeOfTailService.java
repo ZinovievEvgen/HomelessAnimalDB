@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TypeOfTailService {
 
-    TypeOfTail getTypeOfTailById(Long id);
+    TypeOfTail getTypeOfTailById(Long id) throws Exception;
 
     void addTypeOfTail(TypeOfTail typeOfTail);
 
@@ -15,5 +15,5 @@ public interface TypeOfTailService {
 
     void deleteTypeOfTailById(Long id);
 
-    void updateTypeOfTail(TypeOfTail typeOfTail);
+    void updateTypeOfTail(TypeOfTail typeOfTail) throws Exception;
 }

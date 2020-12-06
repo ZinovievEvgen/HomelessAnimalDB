@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TypeOfColorService {
 
-    TypeOfColor getTypeOfColorById(Long id);
+    TypeOfColor getTypeOfColorById(Long id) throws Exception;
 
     void addTypeOfColor(TypeOfColor typeOfColor);
 
@@ -15,5 +15,5 @@ public interface TypeOfColorService {
 
     void deleteTypeOfColorById(Long id);
 
-    void updateTypeOfColor(TypeOfColor typeOfColor);
+    void updateTypeOfColor(TypeOfColor typeOfColor) throws Exception;
 }

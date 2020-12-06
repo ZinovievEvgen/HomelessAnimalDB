@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PetService {
 
-    Pet getPetById(Long id);
+    Pet getPetById(Long id) throws Exception;
 
     void addPet(Pet pet);
 
@@ -15,6 +15,6 @@ public interface PetService {
 
     void deletePetById(Long id);
 
-    void updatePet(Pet pet);
+    void updatePet(Pet pet) throws Exception;
 
 }

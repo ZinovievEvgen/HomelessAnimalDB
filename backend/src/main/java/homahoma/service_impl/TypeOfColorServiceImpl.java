@@ -19,27 +19,37 @@ public class TypeOfColorServiceImpl implements TypeOfColorService {
     }
 
     @Override
-    public TypeOfColor getTypeOfColorById(Long id) {
-        return null;
+    public TypeOfColor getTypeOfColorById(Long id) throws Exception {
+        return typeOfColorRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addTypeOfColor(TypeOfColor typeOfColor) {
-
+        //заменить логгером
+        typeOfColorRepository.save(typeOfColor);
     }
 
     @Override
     public List<TypeOfColor> getAllTypeOfColor() {
-        return null;
+        return typeOfColorRepository.findAll();
     }
 
     @Override
     public void deleteTypeOfColorById(Long id) {
-
+        try {
+            typeOfColorRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateTypeOfColor(TypeOfColor typeOfColor) {
-
+    public void updateTypeOfColor(TypeOfColor newTypeOfColor) throws Exception {
+        typeOfColorRepository.findById(newTypeOfColor.getId()).map(typeOfBreed -> {
+            typeOfBreed.setName(newTypeOfColor.getName());
+            typeOfBreed.setPets(newTypeOfColor.getPets());
+            return typeOfColorRepository.save(newTypeOfColor);
+        }).orElseThrow(Exception::new);
     }
 }

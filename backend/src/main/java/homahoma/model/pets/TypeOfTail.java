@@ -23,8 +23,8 @@ public class TypeOfTail {
     @Column(name = "id")
     private long id;
 
-    @Column(name = "nameOfTypeOfTailPet")
-    private String nameOfTypeOfTailPet;
+    @Column(name = "name")
+    private String name;
 
     @OneToMany(mappedBy = "typeOfTail", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JsonManagedReference
@@ -49,18 +49,18 @@ public class TypeOfTail {
         this.pets = pets;
     }
 
-    public String getNameOfTypeOfTailPet() {
-        return nameOfTypeOfTailPet;
+    public String getName() {
+        return name;
     }
 
-    public void setNameOfTypeOfTailPet(String nameOfTypeOfTailPet) {
-        this.nameOfTypeOfTailPet = nameOfTypeOfTailPet;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "TypeOfTail{" +
-                "nameOfTypeOfTailPet='" + nameOfTypeOfTailPet + '\'' +
+                "nameOfTypeOfTailPet='" + name + '\'' +
                 '}';
     }
 }

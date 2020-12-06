@@ -19,27 +19,37 @@ public class TypeOfEarServiceImpl implements TypeOfEarService {
     }
 
     @Override
-    public TypeOfEar getTypeOfEarById(Long id) {
-        return null;
+    public TypeOfEar getTypeOfEarById(Long id) throws Exception {
+        return typeOfEarRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addTypeOfEar(TypeOfEar typeOfEar) {
-
+        //заменить логгером
+        typeOfEarRepository.save(typeOfEar);
     }
 
     @Override
     public List<TypeOfEar> getAllTypeOfEar() {
-        return null;
+        return typeOfEarRepository.findAll();
     }
 
     @Override
     public void deleteTypeOfEarById(Long id) {
-
+        try {
+            typeOfEarRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateTypeOfEar(TypeOfEar typeOfEar) {
-
+    public void updateTypeOfEar(TypeOfEar newTypeOfEar) throws Exception {
+        typeOfEarRepository.findById(newTypeOfEar.getId()).map(typeOfEar -> {
+            typeOfEar.setName(newTypeOfEar.getName());
+            typeOfEar.setPets(newTypeOfEar.getPets());
+            return typeOfEarRepository.save(newTypeOfEar);
+        }).orElseThrow(Exception::new);
     }
 }

@@ -19,27 +19,38 @@ public class TypeOfPetServiceImpl implements TypeOfPetService {
     }
 
     @Override
-    public TypeOfPet getTypeOfPetById(Long id) {
-        return null;
+    public TypeOfPet getTypeOfPetById(Long id) throws Exception {
+        return typeOfPetRepository.findById(id).orElseThrow(Exception::new);
     }
 
     @Override
     public void addTypeOfPet(TypeOfPet typeOfPet) {
-
+        //заменить логгером
+        typeOfPetRepository.save(typeOfPet);
     }
 
     @Override
     public List<TypeOfPet> getAllTypeOfPet() {
-        return null;
+        return typeOfPetRepository.findAll();
     }
 
     @Override
     public void deleteTypeOfPetById(Long id) {
-
+        try {
+            typeOfPetRepository.deleteById(id);
+        } catch (Exception e) {
+            //заменить логгером
+            System.out.println(e.getMessage());
+        }
     }
 
     @Override
-    public void updateTypeOfPet(TypeOfPet typeOfPet) {
-
+    public void updateTypeOfPet(TypeOfPet newTypeOfPet) throws Exception {
+        typeOfPetRepository.findById(newTypeOfPet.getId()).map(typeOfPet -> {
+            typeOfPet.setName(newTypeOfPet.getName());
+            typeOfPet.setPets(newTypeOfPet.getPets());
+            typeOfPet.setTypeOfBreedList(newTypeOfPet.getTypeOfBreedList());
+            return typeOfPetRepository.save(newTypeOfPet);
+        }).orElseThrow(Exception::new);
     }
 }

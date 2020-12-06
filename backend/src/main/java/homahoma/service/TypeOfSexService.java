@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TypeOfSexService {
 
-    TypeOfSex getTypeOfSexById(Long id);
+    TypeOfSex getTypeOfSexById(Long id) throws Exception;
 
     void addTypeOfSex(TypeOfSex typeOfSex);
 
@@ -14,5 +14,5 @@ public interface TypeOfSexService {
 
     void deleteTypeOfSexById(Long id);
 
-    void updateTypeOfSex(TypeOfSex typeOfSex);
+    void updateTypeOfSex(TypeOfSex typeOfSex) throws Exception;
 }

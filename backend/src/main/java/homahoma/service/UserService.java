@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface UserService {
 
-    User getUserById(Long id);
+    User getUserById(Long id) throws Exception;
 
     void addUser(User user);
 
@@ -14,5 +14,5 @@ public interface UserService {
 
     void deleteUserById(Long id);
 
-    void updateUser(User user);
+    void updateUser(User user) throws Exception;
 }

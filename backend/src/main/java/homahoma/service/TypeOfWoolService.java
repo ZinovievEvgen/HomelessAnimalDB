@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface TypeOfWoolService {
 
-    TypeOfWool getTypeOfWoolById(Long id);
+    TypeOfWool getTypeOfWoolById(Long id) throws Exception;
 
     void addTypeOfWool(TypeOfWool typeOfWool);
 
@@ -14,5 +14,5 @@ public interface TypeOfWoolService {
 
     void deleteTypeOfWoolById(Long id);
 
-    void updateTypeOfWool(TypeOfWool typeOfWool);
+    void updateTypeOfWool(TypeOfWool typeOfWool) throws Exception;
 }

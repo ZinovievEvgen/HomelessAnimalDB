@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TypeOfEarService {
 
-    TypeOfEar getTypeOfEarById(Long id);
+    TypeOfEar getTypeOfEarById(Long id) throws Exception;
 
     void addTypeOfEar(TypeOfEar typeOfEar);
 
@@ -15,5 +15,5 @@ public interface TypeOfEarService {
 
     void deleteTypeOfEarById(Long id);
 
-    void updateTypeOfEar(TypeOfEar typeOfEar);
+    void updateTypeOfEar(TypeOfEar typeOfEar) throws Exception;
 }

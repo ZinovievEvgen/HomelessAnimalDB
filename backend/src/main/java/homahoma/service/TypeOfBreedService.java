@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface TypeOfBreedService {
 
-    TypeOfBreed getTypeOfBreedById(Long id);
+    TypeOfBreed getTypeOfBreedById(Long id) throws Exception;
 
     void addTypeOfBreed(TypeOfBreed typeOfBreed);
 
@@ -15,5 +15,5 @@ public interface TypeOfBreedService {
 
     void deleteTypeOfBreedById(Long id);
 
-    void updateTypeOfBreed(TypeOfBreed typeOfBreed);
+    void updateTypeOfBreed(TypeOfBreed typeOfBreed) throws Exception;
 }
